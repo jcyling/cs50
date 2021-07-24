@@ -1,0 +1,86 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding-top: 3.5rem;
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: 16px;
+    height: 100%;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.bg-black {
+    background: black;
+}
+
+.big-h1{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.ascii-art {
+    color: #00ff44;
+    padding: 2rem;
+}
+
+.bounce {
+      position: relative;
+      left:0;
+      bottom:0;
+      margin-top:-25px;
+      margin-left:-25px;
+      height: auto;
+      width: auto;
+      color: green;
+      -webkit-animation:bounce 1s infinite;
+    }
+
+    @-webkit-keyframes bounce {
+      0%       { bottom:5px; }
+      25%, 75% { bottom:15px;}
+      50%      { bottom:5px; }
+      100%     {bottom:0;}
+    }
+
+#btn-fact{
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+
+/**Animate sun generated from https://www.gradient-animator.com/**/
+
+#sun-bg{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #ff0000, #ffe073);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+
+}
+
+ @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+

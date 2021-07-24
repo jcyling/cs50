@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">         <title>Trivia!</title>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function(){
+
+                /*Change correct button to green colour*/
+                document.querySelector('#correct').onclick = function() {
+                    this.style.backgroundColor = 'green';
+                    listen(true);
+                };
+
+
+                /*Change incorrect button to red colour*/
+                const incorrects = document.querySelectorAll('.incorrect');
+
+                for (const button of incorrects) {
+                    button.addEventListener('click', function() {
+                        this.style.backgroundColor = 'red';
+                        listen(false);
+                    });
+                }
+
+                /*Change textbox colour when submitted*/
+                let correct = 'ducks';
+
+                document.querySelector('#button2').onclick = function() {
+                    /*Implement case insensitive answer*/
+                    let input = document.getElementById('open-ans').value;
+                    if (input == correct) {
+                        document.querySelector('#open-ans').style.backgroundColor = 'green';
+                        document.getElementById("feedback-2").innerHTML = "Correct";
+                    }
+                    else {
+                        document.querySelector('#open-ans').style.backgroundColor = 'red';
+                        document.getElementById("feedback-2").innerHTML = "Incorrect";
+                    }
+                };
+
+            });
+
+            function listen(bool) {
+                if (bool == true){
+                 document.getElementById("feedback-1").innerHTML = "Correct";
+                }
+                else{
+                document.getElementById("feedback-1").innerHTML = "Incorrect";
+                }
+            }
+        </script>
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>AnimalZzzZzZZ</h3>
+                    <button class="incorrect">Ducks!</button>
+                    <button class="incorrect">Chickens!!</button>
+                    <button class="incorrect">Frogs!</button>
+                    <button class="incorrect">Birds!</button>
+                    <button id="correct">Lizards!</button>
+                <p id="feedback-1"></p>
+
+            </div>
+
+            <div class="section">
+                <h3>Part 2: Free Response</h3>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>But really, what is your favourite animal?</h3>
+                <input type="text" id="open-ans">
+                <button id="button2">Check Answer!</button>
+                <p id="feedback-2"></p>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
